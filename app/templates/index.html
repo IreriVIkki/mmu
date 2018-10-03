@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>What's the weather like?</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.css" />
+</head>
+
+<nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="http://localhost:5000/">
+            <h1 class="title is-success">Calculator</h1>
+        </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+        <div class="navbar-start">
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    More
+                </a>
+
+                <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                        About
+                    </a>
+                    <a class="navbar-item">
+                        Jobs
+                    </a>
+                    <a class="navbar-item">
+                        Contact
+                    </a>
+                    <hr class="navbar-divider">
+                    <a class="navbar-item">
+                        Report an issue
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="navbar-end">
+            <div class="navbar-item">
+                <div class="buttons">
+                    <a class="button is-primary">
+                        <strong>Sign up</strong>
+                    </a>
+                    <a class="button is-light">
+                        Log in
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <div class="hero is-grey">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Basic Calculator
+                </h1>
+                <h3 class="subtitle">
+                    a simple python application for debugging lesson
+                </h3>
+            </div>
+        </div>
+    </div>
+    <section class="block columns">
+        <div class="column"></div>
+        <div class="container column">
+            <div class="columns is-2 field">
+                <form action="" method="POST">
+                    <legend>Calculator</legend>
+                    {{ form.csrf_token }}
+                    <div class="control">
+                        {{ form.num1.label(class='control label') }}
+                        {{ form.num1(class='control input') }}
+                    </div>
+                    <div class="control">
+                        {{ form.operator.label(class='control label') }}
+                        {{ form.operator(class='control input') }}
+                    </div>
+                    <div class="control">
+                        {{ form.num2.label(class='control label') }}
+                        {{ form.num2(class='control input') }}
+                    </div>
+                    <div class="control">
+                        {{ form.submit(class='control button is-success label') }}
+                    </div>
+                    <div class="block">
+                        <label class="label is-success" for="">Answer: <span class="button is-light">{{ answer }}</span></label>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="column"></div>
+    </section>
+</body>
+
+</html>
